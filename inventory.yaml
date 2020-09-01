@@ -1,0 +1,22 @@
+groups:
+  - name: linux
+    targets:
+      - nix0.classroom.puppet.com
+  - name: windows
+    targets:
+      - win0.classroom.puppet.com
+  - name: testgroup
+    targets:
+      - _plugin: puppetdb
+        query: "inventory[certname] { facts.pe_patch.package_update_count > 0 }"
+
+config:
+  transport: pcp
+  pcp:
+    cacert: "/etc/puppetlabs/puppet/ssl/certs/ca.pem"
+    service-url: "https://puppet.classroom.puppet.com:8143"
+    token-file: "tokens/token"
+
+
+
+

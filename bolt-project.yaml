@@ -1,0 +1,7 @@
+---
+name: shimtest
+puppetdb:
+  server_urls: ["https://puppet.classroom.puppet.com:8081"]
+  cacert: "/etc/puppetlabs/puppet/ssl/certs/ca.pem"
+  token: "tokens/token"
+
